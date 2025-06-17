@@ -1,0 +1,34 @@
+PODS:
+  - Capacitor (7.3.0):
+    - CapacitorCordova
+  - CapacitorBrowser (7.0.1):
+    - Capacitor
+  - CapacitorCordova (7.3.0)
+  - CapacitorSplashScreen (7.0.1):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorBrowser:
+    :path: "../../node_modules/@capacitor/browser"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorSplashScreen:
+    :path: "../../node_modules/@capacitor/splash-screen"
+
+SPEC CHECKSUMS:
+  Capacitor: 8585c18a230122906e114ba5f6325ec65ee1371f
+  CapacitorBrowser: 6299776d496e968505464884d565992faa20444a
+  CapacitorCordova: 2685f5c43675793b5f06dfd66b3b26268f003b97
+  CapacitorSplashScreen: 1d67815a422a9b61539c94f283c08ed56667c0fc
+
+PODFILE CHECKSUM: 90fd7e3e0f0f5d3fb97469327b2d2d7f12a2b610
+
+COCOAPODS: 1.16.2

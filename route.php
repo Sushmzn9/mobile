@@ -72,34 +72,42 @@
                 animate: true,
                 iosSwipeBack: true,
                 stackPages: true,
-            },
-            routes: [{
-                path: '/(.*)',
-                async: function(routeTo, routeFrom, resolve, reject) {
-                    const page = routeTo.path;
-                    resolve({
-                        url: `${page}`,
-                    });
-                }
-            }],
+            }
         });
-
-
-
-        console.log('Current route URL:', app.views.current?.router?.currentRoute?.url);
-
-        const mainView = app.views.create('#main-view');
-
-
-        let mode;
-        if (app.device.webView) mode = 'Standalone';
-        else if (app.device.desktop) mode = 'Browser';
-        else mode = 'Mobile Browser';
-        console.log('Running in:', mode);
 
         app.on('routeChange', (route) => {
             console.log('Route changed to:', route.url);
         });
+
+        let mode;
+        if (app.device.webView) mode = 'standalone';
+        else if (app.device.desktop) mode = 'browser';
+        else mode = 'mobile';
+        console.log('Running in:', mode);
+
+
+        console.log('Current route URL:', app.views.current?.router?.currentRoute?.url);
+
+        const mainView = app.views.create('#main-view', {
+            routes: [{
+                path: '/(.*)',
+                async: function(routeTo, routeFrom, resolve, reject) {
+                    const page = routeTo.url;
+                    console.log('Loading page:', page);
+                    resolve({
+                        url: page + '?device=' + mode + '&timestamp=' + new Date().getTime(),
+                    });
+                },
+            }, ],
+        });
+
+
+
+
+
+
+
+
 
         // Page-level events
         app.on('pageInit', ({

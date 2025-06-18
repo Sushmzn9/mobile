@@ -13,3 +13,5 @@ self.addEventListener('install', (event) => {
     console.log('[ServiceWorker] Fetch:', event.request.url);
     event.respondWith(fetch(event.request));
   });
+
+  

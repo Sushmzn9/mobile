@@ -12,7 +12,7 @@
     }
   },
   "server": {
-    "allowNavigation": ["localhost"]
+    "allowNavigation": ["localhost","test-1069660259397.australia-southeast1.run.app","sushan.dev"]
   }
   
 }

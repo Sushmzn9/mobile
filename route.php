@@ -76,9 +76,9 @@
             routes: [{
                 path: '/(.*)',
                 async: function(routeTo, routeFrom, resolve, reject) {
-                    const page = routeTo.params[0] || 'home';
+                    const page = routeTo.path;
                     resolve({
-                        url: `/${page}`,
+                        url: `${page}`,
                     });
                 }
             }],

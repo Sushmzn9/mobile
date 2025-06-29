@@ -3,14 +3,30 @@
 // ini_set('display_errors', '1');
 // ini_set('display_startup_errors', '1');
 // error_reporting(E_ALL);
+include 'config.php';
 
 // Define routes
 $routes = [
-    '/' => 'home.php',
-    '/home' => 'home.php',
-    '/about' => 'about.php',
-    '/contact' => 'contact.php',
+    '/' => 'home',
+    '/home' => 'home',
+    '/about' => 'about',
+    '/contact' => 'contact',
 ];
+
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+$isMobile = preg_match('/Mobile|Android|iP(hone|od|ad)/i', $userAgent);
+$deviceType = $isMobile ? 'mobile' : 'browser';
+
+// Build device info
+$app = array();
+
+$app['device'] = $_REQUEST['device'] ?? $deviceType;
+$app['ip'] = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$app['timestamp'] = $_REQUEST['timestamp'] ?? time();
+$app['referer'] = $_SERVER['HTTP_REFERER'] ?? '';
+$app['host'] = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$app['userAgent'] = $userAgent;
+$app['path'] = $_SERVER['REQUEST_URI'] ?? '/';
 
 // Get URI
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -25,10 +41,10 @@ $isFramework7Request = isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
 // Route logic
 $page = $routes[$uri] ?? null;
 
-if ($page && file_exists(__DIR__ . "/pages/$page")) {
+if ($page && file_exists(__DIR__ . "/pages/$page.php")) {
     // Capture output
     ob_start();
-    include __DIR__ . "/pages/$page";
+    include __DIR__ . "/pages/$page.php";
     $pageContent = ob_get_clean();
 
     if ($isFramework7Request) {

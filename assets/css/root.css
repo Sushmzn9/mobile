@@ -1,0 +1,111 @@
+
+:root {
+    
+    --f7-navbar-bg-color: var(--f7-bars-bg-color);
+    --f7-navbar-bg-color-rgb: var(--f7-bars-bg-color-rgb);
+    --f7-navbar-border-color: var(--f7-bars-border-color);
+   
+    --f7-navbar-hide-show-transition-duration: 400ms;
+    --f7-navbar-title-line-height: 1.2;
+    --f7-navbar-subtitle-text-align: inherit;
+    --f7-navbar-large-title-line-height: 1.2;
+    --f7-navbar-large-title-text-color: inherit;
+    --f7-navbar-large-title-padding-left: 16px;
+    --f7-navbar-large-title-padding-right: 16px;
+    --f7-navbar-link-color : #000;
+
+    --f7-theme-color: #222;
+    --f7-theme-color-rgb: 0, 122, 255;
+    --f7-theme-color-shade: #0066d6;
+    --f7-theme-color-tint: #298fff;
+  }
+  .ios {
+    
+    --f7-navbar-link-color: var(--f7-bars-link-color);
+    --f7-navbar-text-color: var(--f7-bars-text-color);
+   
+    --f7-navbar-height: 44px;
+    --f7-navbar-font-size: 14px;
+    --f7-navbar-title-font-size: inherit;
+    --f7-navbar-inner-padding-left: 8px;
+    --f7-navbar-inner-padding-right: 8px;
+    --f7-navbar-title-font-weight: 600;
+    --f7-navbar-title-margin-left: 0;
+    --f7-navbar-title-margin-right: 0;
+    --f7-navbar-title-text-align: center;
+    --f7-navbar-subtitle-font-size: 10px;
+    --f7-navbar-subtitle-line-height: 1;
+    --f7-navbar-large-title-height: 52px;
+    --f7-navbar-large-title-font-size: 34px;
+    --f7-navbar-large-title-font-weight: 700;
+    --f7-navbar-large-title-letter-spacing: -0.03em;
+    --f7-navbar-large-title-padding-vertical: 6px;
+    /*
+    --f7-navbar-link-height: var(--f7-navbar-height);
+    --f7-navbar-link-line-height: var(--f7-navbar-height);
+    */
+    --f7-navbar-subtitle-text-color: rgba(0, 0, 0, 0.55);
+  }
+  .ios .dark,
+  .ios.dark {
+    --f7-navbar-subtitle-text-color: rgba(255, 255, 255, 0.55);
+  }
+  .md {
+    --f7-navbar-height: 64px;
+    --f7-navbar-font-size: 14px;
+    --f7-navbar-title-font-size: 22px;
+    --f7-navbar-inner-padding-left: 0px;
+    --f7-navbar-inner-padding-right: 0px;
+    --f7-navbar-title-font-weight: 400;
+    --f7-navbar-title-margin-left: 0px;
+    --f7-navbar-title-margin-right: 16px;
+    --f7-navbar-title-text-align: left;
+    --f7-navbar-subtitle-font-size: 14px;
+    --f7-navbar-subtitle-line-height: 1.2;
+    --f7-navbar-large-title-font-size: 28px;
+    --f7-navbar-large-title-height: 88px;
+    --f7-navbar-large-title-font-weight: 400;
+    --f7-navbar-large-title-letter-spacing: 0;
+    --f7-navbar-large-title-padding-vertical: 8px;
+    --f7-navbar-link-height: 48px;
+    --f7-navbar-link-line-height: 48px;
+  }
+  .md,
+  .md .dark,
+  .md [class*='color-'] {
+    --f7-navbar-link-color: var(--f7-md-on-surface);
+    --f7-navbar-text-color: var(--f7-md-on-surface);
+    --f7-navbar-subtitle-text-color: var(--f7-md-on-surface-variant);
+  }
+  
+
+  @font-face {
+    font-family: 'Framework7 Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Framework7 Icons'), local('Framework7Icons-Regular'),
+      url('../fonts/Framework7Icons-Regular.woff2') format('woff2'), url('../fonts/Framework7Icons-Regular.woff')
+        format('woff'), url('../fonts/Framework7Icons-Regular.ttf') format('truetype');
+  }
+  
+  .f7-icons,
+  .framework7-icons {
+    font-family: 'Framework7 Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-feature-settings: 'liga';
+    -moz-font-feature-settings: 'liga=1';
+    -moz-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+  }
